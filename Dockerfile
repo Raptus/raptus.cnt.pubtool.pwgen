@@ -1,5 +1,7 @@
 FROM php:apache
 
+COPY entrypoint.sh ./
+
 #Start an enable SSH
 RUN apt-get update \
     && apt-get install -y --no-install-recommends dialog gunicorn \
@@ -11,7 +13,6 @@ RUN apt-get update \
 
 COPY sshd_config /etc/ssh/
 COPY index.php /var/www/html/
-COPY entrypoint.sh ./
 
 EXPOSE 80 8000 2222
 
