@@ -3,7 +3,7 @@ FROM php:apache
 #Start an enable SSH
 COPY entrypoint.sh ./
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends dialog \
+    && apt-get install -y --no-install-recommends dialog gunicorn \
     && apt-get install -y --no-install-recommends openssh-server \
     #XKCD
     && apt-get -y install python3-pkg-resources python3 xkcdpass \
