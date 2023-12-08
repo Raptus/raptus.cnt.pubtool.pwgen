@@ -1,5 +1,5 @@
 <?php
-$lang = htmlspecialchars($_GET["lang"]);
+$lang = htmlspecialchars($_GET["lang"] ?? false);
 $dict = "";
 $listNonAlpha = ",;:!?$/*-_+&@";
 
